@@ -19,12 +19,23 @@ let result2 = myFilter(['choose', 'big', 'words', 'only'], function (s) {
 console.log(result2);      // ['choose', 'words', 'only']
 *******************************************************************************/
 
-let myFilter = function() {
+let myFilter = function (array, cb) {
+    let newArr = [];
+    // let filtered = [];
+    let filtered = array.filter(function (num) {
+        if (cb(num)) {
+            newArr.push(num);
 
+        }
+    });
+    return newArr;
 };
 
 
-
+let result2 = myFilter(['choose', 'big', 'words', 'only'], function (s) {
+    return s.length > 3;
+});
+console.log(result2);
 
 
 
