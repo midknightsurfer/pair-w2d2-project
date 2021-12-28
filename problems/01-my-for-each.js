@@ -21,9 +21,16 @@ myForEach(['laika', 'belka'], function (el) {
 console.log(test); // ['LAIKA', 'BELKA']
 *******************************************************************************/
 
-let myForEach = function() {
-
+let myForEach = function(array, callback) {
+    array.forEach(function (el, i) {
+        return callback(el, i);
+    })
 };
+
+myForEach(['a', 'b', 'c'], function (el, i) {
+    console.log(el + ' is at index ' + i);
+});
+
 
 
 
